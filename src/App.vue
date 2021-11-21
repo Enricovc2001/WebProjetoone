@@ -134,8 +134,6 @@
 
   </v-app>
 
-
-
 </template>
 
 <script>
