@@ -1,15 +1,46 @@
 <template>
-  <hello-world />
+  <div>
+    
+    <v-row>
+      <v-col
+        v-for = "(data,i) in myCards"
+          :key = "i"
+          cols="12"
+          sm="6"
+          md="4"
+          xs='2'
+
+          >
+          
+            <Mycard  :cardInfo="data"> </Mycard>
+
+      </v-col>
+      </v-row>
+  
+  
+  </div>
 </template>
 
 <script>
-  import HelloWorld from '../components/HelloWorld'
+import Mycard from '../components/Mycard'
+  
 
   export default {
     name: 'Home',
+    data(){
+      return{
+
+      }
+    },
+    computed: {
+      myCards(){
+        return this.$store.state.cards
+      }
+    },
 
     components: {
-      HelloWorld,
+      Mycard
+      
     },
   }
 </script>

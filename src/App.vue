@@ -3,16 +3,28 @@
     <v-system-bar
     height="20"
   ></v-system-bar>
+
+
+    <template>
+  <div>
     <v-app-bar
+      app clipped left
       color="deep-purple accent-4"
       dense
       dark
     >
       <v-app-bar-nav-icon></v-app-bar-nav-icon>
 
-      <v-toolbar-title>Vue</v-toolbar-title>
+      <v-toolbar-title>Mytoolbar</v-toolbar-title>
 
       <v-spacer></v-spacer>
+      <v-btn
+              color="warning"
+              fab
+              dark
+            >
+              <v-icon>mdi-account-circle</v-icon>
+            </v-btn>
 
       <v-btn icon>
         <v-icon>mdi-heart</v-icon>
@@ -47,6 +59,8 @@
         </v-list>
       </v-menu>
     </v-app-bar>
+  </div>
+</template>
 
 
 
@@ -58,11 +72,33 @@
       <v-list-item>
         <v-list-item-content>
           <v-list-item-title class="text-h6">
-            Application
+            Enrico ProjectONE
           </v-list-item-title>
           <v-list-item-subtitle>
-            subtext
+            Side bar
           </v-list-item-subtitle>
+          <v-btn
+              color="warning"
+              fab
+              dark
+            >
+              <v-icon>mdi-account-circle</v-icon>
+            </v-btn>
+          <v-btn icon>
+        <v-icon>mdi-heart</v-icon>
+      </v-btn>
+      
+
+      <v-btn icon>
+        <v-icon>mdi-magnify</v-icon>
+      </v-btn>
+      <v-btn
+            icon
+            v-bind="attrs"
+            v-on="on"
+          >
+            <v-icon>mdi-dots-vertical</v-icon>
+          </v-btn>
         </v-list-item-content>
       </v-list-item>
 
