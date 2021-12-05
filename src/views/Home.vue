@@ -3,7 +3,7 @@
     
     <v-row>
       <v-col
-        v-for = "(data,i) in myCards"
+        v-for = "(data,i) in events"
           :key = "i"
           cols="12"
           sm="6"
@@ -23,7 +23,7 @@
 
 <script>
 import Mycard from '../components/Mycard'
-  
+
 
   export default {
     name: 'Home',
@@ -35,12 +35,19 @@ import Mycard from '../components/Mycard'
     computed: {
       myCards(){
         return this.$store.state.cards
+      },
+      events(){
+        return this.$store.state.events
       }
+
     },
 
     components: {
       Mycard
-      
     },
+    async created(){
+      this.$store.dispatch("fetchEvents")
+      
+    }
   }
 </script>
